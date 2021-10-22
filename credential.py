@@ -31,3 +31,43 @@ class Credential:
         '''
 
         Credential.credential_list.remove(self)
+
+    #code that makes the find user by accoutName pass       
+    @classmethod
+    def find_by_accountName(cls,accountName):
+        '''
+        Method that takes in a accountName and returns a credential that matches that accountName.
+
+        Args:
+            accountName: accountName to search for
+        Returns :
+            Credential that matches the accountName.
+        '''
+
+        for credential in cls.credential_list:
+            if credential.accountName == accountName:
+                return credential
+
+    #code that makes the find if a credential object actually exists pass       
+    @classmethod
+    def credential_exist(cls,accountName):
+        '''
+        Method that checks if a credential exists from the credential list.
+        Args:
+            accountName: accountName to search for
+        Returns :
+            Boolean: True or false depending if the credential exists
+        '''
+        for credential in cls.credential_list:
+            if credential.accountName == accountName:
+                return True
+
+        return False
+
+    #Code to make the display_credential test case pass.
+    @classmethod
+    def display_credential(cls):
+        '''
+        method that returns the credential list
+        '''
+        return cls.credential_list
