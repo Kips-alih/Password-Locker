@@ -1,5 +1,7 @@
 from credential import Credential
 from user import User
+import random
+import string
 
 #Creating user
 def create_new_user(username,password):
@@ -122,7 +124,7 @@ def main():
 
                     while True:
   
-                      print("Use the following shortcodes : cp-create password")
+                      print("Use the following shortcodes : cp-create password or gp to get a system generated password")
                       password_type = input().lower()
                       if password_type == 'cp':
                           password = input("Create your password\n")
