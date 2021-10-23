@@ -119,12 +119,19 @@ def main():
 
                     print("Username ...")
                     username = input()
-                    
-                    print("Password ...")
-                    password=input()
 
-                    # print("Email address ...")
-                    # e_address = input()
+                    while True:
+  
+                      print("Use the following shortcodes : cp-create password")
+                      password_type = input().lower()
+                      if password_type == 'cp':
+                          password = input("Create your password\n")
+                          break
+                      
+                      else:
+                          print("Invalid shortcode please try again")
+                    
+                   
                     save_credential(create_credential(accountName,username,password))                    
                     print ('\n')
                     print(f"New Credential name:{accountName}, username:{username},password: {password}")
