@@ -67,42 +67,42 @@ def display_credential():
 
 #main function
 def main():
-    print("Hello Welcome to your password locker! Use the following shortcode nu -create a new user account")
-    short_code = input("").lower()
-    if short_code == 'nu':
-        print("Create account")
-        print('-' * 50)
+    print("Hello Welcome to your password locker!Proceed to create your account")
+    print("\n")
+    
+    print("Create account")
+    print('-' * 50)
+    print("Username")
+    created_username = input()
+    print("password")
+    created_password = input()
+    
+    save_user(create_new_user(created_username,created_password))
+    print("-"*20)
+    print(f"Hello {created_username}, Account created succesfully! Your password is: {created_password}")
+    print("\n")
+    print("Proceed to login")
+    print("username")
+    entered_username=input()
+    print("Your password")
+    entered_password=input()
+    while entered_password!=created_password or entered_username!=created_username:
+
+        print("Invalid username or password")
         print("Username")
-        created_username = input()
-        print("password")
-        created_password = input()
-        
-        save_user(create_new_user(created_username,created_password))
-        print("-"*20)
-        print(f"Hello {created_username}, Account created succesfully! Your password is: {created_password}")
-        print("\n")
-        print("Proceed to login")
-        print("username")
         entered_username=input()
-        print("Your password")
+        print("Password")
         entered_password=input()
-        while entered_password!=created_password or entered_username!=created_username:
+    else :
+      print(f"Welcome :{entered_username} to your account")
+      print("\n")
 
-            print("Invalid username or password")
-            print("Username")
-            entered_username=input()
-            print("Password")
-            entered_password=input()
-        else :
-          print(f"Welcome :{entered_username} to your account")
-          print("\n")
-
-        # user_name = input()
+    # user_name = input()
 
 
-        # print(f"Hello {user_name}. what would you like to do?")
+    # print(f"Hello {user_name}. what would you like to do?")
 
-        print('\n')
+    print('\n')
 
 
     while True:
