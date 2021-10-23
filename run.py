@@ -1,4 +1,19 @@
 from credential import Credential
+from user import User
+
+#Creating user
+def create_new_user(username,password):
+    """
+    function that creates a user using a password and username
+    """
+    new_user = User(username,password) 
+    return new_user
+#Saving the user
+def save_user(user):
+    """
+    function that saves a new user
+    """
+    user.save_user()
 
 #Creating a contact
 def create_credential(accountName,username,password):
@@ -52,14 +67,26 @@ def display_credential():
 
 #main function
 def main():
-    print("Hello Welcome to your password locker. What is your name?")
+    print("Hello Welcome to your password locker! Use the following shortcode nu -create a new user account, lg- to login to your account")
+    short_code = input("").lower()
+    if short_code == 'nu':
+        print("Create account")
+        print('-' * 50)
+        print("Username")
+        username = input()
+        print("password")
+        password = input()
+        
+        save_user(create_new_user(username,password))
+        print("-"*20)
+        print(f"Hello {username}, Account created succesfully! Your password is: {password}")
 
-    user_name = input()
+        # user_name = input()
 
 
-    print(f"Hello {user_name}. what would you like to do?")
+        # print(f"Hello {user_name}. what would you like to do?")
 
-    print('\n')
+        print('\n')
 
 
     while True:
@@ -94,7 +121,7 @@ def main():
                             print('\n')
 
                             for credential in display_credential():
-                                    print(f"{credential.accountName} {credential.username} .....{credential.password}")
+                                    print("Accountname: "+ str(credential.accountName) + "  Username: "+str(credential.username)+ "  password: " +str(credential.password))
 
                             print('\n')
                     else:
@@ -110,7 +137,6 @@ def main():
                     if check_existing_credentials(search_accountName):
                             search_credential = find_credential(search_credential)
                             print(f"{search_credential.accountName} {search_credential.Username}")
-                            print('-' * 20)
 
                             print(f"Accountname.......{search_credential.accountName}")
                             print(f"Username.......{search_credential.username}")
@@ -128,7 +154,7 @@ def main():
                         print("_"*40)
                         search_credential.delete_credential()
                         print('\n')
-                        print(f"Your stored credentials for : {search_credential.accountName} successfully deleted!!!")
+                        print(f"Your credentials for : {search_credential.accountName} successfully deleted!!!")
                         print('\n')
                 else:
                         print("The Credential you want to delete does not exist")
