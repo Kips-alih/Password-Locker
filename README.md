@@ -35,6 +35,16 @@ As a user, i want to :
 
 ## Behavior Driven Development
 
+|               Behaviour              | Input                            | Output                                               |
+|:------------------------------------:|----------------------------------|------------------------------------------------------|
+| Open the application on the terminal | Run the command **./run.py** | Hello Welcome to your password locker!Proceed to create your account |
+| Create a username and password        | Enter a username of your choice and password     | Hello **username**,Account created succesfully! Your password is:**password**|
+| Proceed to login |   Enter your **username** and **password** | Welcome: **username** to your account |
+| Create new credential | Enter **cc** | Enter account name and username then enter **cp** to create your own password or **gp** to get a system generated password where you'll have to specify length of the password you need | New Credential **Account name**, **Username**,**Password** |
+| Display stored credentials       |           Enter ***dc***         | A list of all credentials that has been stored or You don't have any credentials saved yet|
+| Delete an existing credential that you no longer need| Enter **del** |Enter the account name of the Credential you want to delete and returns true if the it has been deleted and false if it doesn't exist|
+|  Exit the application                |              Enter **ex**       | Exits the application |
+
 ## Technologies used
 
 * Python3.8
