@@ -32,7 +32,7 @@ class Credential:
 
         Credential.credential_list.remove(self)
 
-    #code that makes the find user by accoutName pass       
+
     @classmethod
     def find_by_accountName(cls,accountName):
         '''
@@ -48,7 +48,7 @@ class Credential:
             if credential.accountName == accountName:
                 return credential
 
-    #code that makes the find if a credential object actually exists pass       
+
     @classmethod
     def credential_exist(cls,accountName):
         '''
@@ -64,7 +64,7 @@ class Credential:
 
         return False
 
-    #Code to make the display_credential test case pass.
+
     @classmethod
     def display_credential(cls):
         '''
