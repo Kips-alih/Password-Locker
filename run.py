@@ -1,26 +1,28 @@
+#!/usr/bin/env python3.8
 from credential import Credential
 from user import User
 import random
 import string
 
-#Creating user
+
 def create_new_user(username,password):
     """
     function that creates a user using a password and username
     """
     new_user = User(username,password) 
     return new_user
-#Saving the user
+
+
 def save_user(user):
     """
     function that saves a new user
     """
     user.save_user()
 
-#Creating a contact
+
 def create_credential(accountName,username,password):
     '''
-    Function to create a new contact
+    Function to create a new credential
     '''
     new_credential = Credential(accountName,username,password)
     return new_credential
@@ -28,34 +30,38 @@ def create_credential(accountName,username,password):
 
 def save_credential(credential):
     """
-    function to save contacts
+    function to save credential
     """ 
     credential.save_credential()
-#Delete contact
+
+
+
 def del_credential(credential):
     '''
     Function to delete a credential
     '''
     credential.delete_credential()
 
-#Finding contact
+
+
 def find_credential(accountName):
     '''
-    Function that finds a contact by number and returns the contact
+    Function that finds a credential by accountname and returns the credential
     '''
     return Credential.find_by_accountName(accountName)
 
-#Check if contact exists
+
+
 def check_existing_credentials(accountName):
     '''
-    Function that check if a contact exists with that number and return a Boolean
+    Function that check if a credential exists with that accountname and return a Boolean
     '''
     return Credential.credential_exist(accountName)
 
-#Displaying all contacts
+
 def display_credential():
     '''
-    Function that returns all the saved contacts
+    Function that returns all the saved credentials
     '''
     return Credential.display_credential()
 
@@ -151,7 +157,7 @@ def main():
             elif short_code == 'dc':
 
                     if display_credential():
-                            print("Here is a list of all your contacts")
+                            print("Here is a list of all your credentials")
                             print('\n')
 
                             for credential in display_credential():
@@ -160,7 +166,7 @@ def main():
                             print('\n')
                     else:
                             print('\n')
-                            print("You dont seem to have any contacts saved yet")
+                            print("You dont seem to have any credentials saved yet")
                             print('\n')
 
             elif short_code == 'fc':
