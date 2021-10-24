@@ -124,11 +124,20 @@ def main():
 
                     while True:
   
-                      print("Use the following shortcodes : cp-create password or gp to get a system generated password")
+                      print("Use the following shortcodes : cp-create password or gp-to get a system generated password")
                       password_type = input().lower()
                       if password_type == 'cp':
                           password = input("Create your password\n")
                           break
+                      elif password_type== "gp":
+                          print('hello, Welcome to Password generator!')
+                          length = int(input('\nEnter the length of password: '))
+                          all = string.ascii_letters + string.digits 
+                          password = "".join(random.sample(all,length))
+                          print(f"Your generated password is : {password}")
+                          break
+
+
                       
                       else:
                           print("Invalid shortcode please try again")
@@ -136,7 +145,7 @@ def main():
                    
                     save_credential(create_credential(accountName,username,password))                    
                     print ('\n')
-                    print(f"New Credential name:{accountName}, username:{username},password: {password}")
+                    print(f"New Credential Account name:{accountName}, Username:{username},Password: {password}")
                     print ('\n')
 
             elif short_code == 'dc':
