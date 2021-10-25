@@ -175,11 +175,10 @@ def main():
 
                     search_accountName = input()
                     if check_existing_credentials(search_accountName):
-                            search_credential = find_credential(search_credential)
-                            print(f"{search_credential.accountName} {search_credential.Username}")
-
+                            search_credential = find_credential(search_accountName)
+                            search_credential.find_by_accountName(accountName)
+                            print('\n')
                             print(f"Accountname.......{search_credential.accountName}")
-                            print(f"Username.......{search_credential.username}")
                     else:
                             print("That credential does not exist")
 
