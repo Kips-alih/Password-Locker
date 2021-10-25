@@ -19,8 +19,8 @@ Application that will help us manage our passwords and even generate new passwor
 
 * Open the cloned project in your editor e.g `code .` to open in visual studio code editor.
 * On the terminal run these commands:
-`chmod +x run.py`
-`./run.py`
+* `chmod +x run.py`
+* `./run.py`
 
 ## User Stories
 
