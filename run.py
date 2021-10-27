@@ -32,6 +32,12 @@ def create_credential(accountName,username,password):
     new_credential = Credential(accountName,username,password)
     return new_credential
 
+def generate_password(n):
+    '''
+    Function to generate password
+    '''
+    return Credential.generate_password(n)
+
 
 def save_credential(credential):
     """
@@ -142,10 +148,10 @@ def main():
                           password = input("Create your password\n")
                           break
                       elif password_type== "gp":
-                          print('hello, Welcome to Password generator!')
+                          print('Hello, Welcome to Password generator!')
                           length = int(input('\nEnter the length of password: '))
-                          all = string.ascii_letters + string.digits 
-                          password = "".join(random.sample(all,length))
+                          password=generate_password(length)
+                          print("\n")
                           print(f"Your generated password is : {password}")
                           break
 
