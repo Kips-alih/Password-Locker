@@ -1,3 +1,5 @@
+import string
+import random
 class Credential:
     """
     Class that generates new instances of credentials.
@@ -71,3 +73,15 @@ class Credential:
         method that returns the credential list
         '''
         return cls.credential_list
+
+    @classmethod
+    def generate_password(cls,length):
+
+        """
+        generate random password consisting of letters
+        """
+        passcode = string.ascii_letters+ string.digits
+        
+        return ''.join(random.choice(passcode) for i in range(length))
+
+            
