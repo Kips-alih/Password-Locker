@@ -19,6 +19,11 @@ def save_user(user):
     """
     user.save_user()
 
+def authenticate_user(username,password):
+    '''
+    Check for user in the array
+    '''
+    return User.user_verificate(username,password)
 
 def create_credential(accountName,username,password):
     '''
@@ -94,16 +99,17 @@ def main():
     entered_username=input()
     print("Your password")
     entered_password=input()
-    while entered_password!=created_password or entered_username!=created_username:
-
+    print("\n")
+    if authenticate_user(entered_username,entered_password):
+        print(f"Successfully logged in.Welcome :{entered_username} to your account")
+    else :
         print("Invalid username or password")
         print("Username")
         entered_username=input()
         print("Password")
         entered_password=input()
-    else :
-      print(f"Welcome :{entered_username} to your account")
-      print("\n")
+
+
 
     # user_name = input()
 
